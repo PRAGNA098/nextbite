@@ -13,9 +13,10 @@ export default function RecipeSearch({ recipes }: RecipeSearchProps) {
   const [search, setSearch] = useState("");
 
   const filteredRecipes = recipes.filter((recipe) =>
-    recipe.title.toLowerCase().includes(search.toLowerCase())
-  );
-
+   (recipe.title + " " + recipe.cuisine)
+     .toLowerCase()
+     .includes(search.toLowerCase())
+  ); 
   return (
     <section>
       <div className="mb-8">
