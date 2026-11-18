@@ -1,12 +1,10 @@
 
 import { recipes } from "./data/recipes";
-import RecipeCard from "./components/RecipeCard";
+import RecipeSearch from "./components/RecipeSearch";
 
 export default function Home() {
   return (
     <main className="max-w-6xl mx-auto px-6 py-12">
-
-      {/* Hero Section */}
       <section className="text-center mb-12">
         <p className="text-orange-600 font-semibold mb-3">
           WELCOME TO NEXTBITES
@@ -22,19 +20,13 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Recipe Section */}
       <section>
         <h2 className="text-2xl font-bold text-gray-800 mb-6">
           Popular Recipes
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {recipes.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          ))}
-        </div>
+        <RecipeSearch recipes={recipes} />
       </section>
-
     </main>
   );
 }
