@@ -20,6 +20,7 @@ export default function Error({
 
       <p className="text-gray-600 mb-6">
         We couldn't load this page. Please try again.
+        {error.message && ` (${error.message})`}
       </p>
 
       <button
